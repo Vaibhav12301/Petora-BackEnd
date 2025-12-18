@@ -138,6 +138,10 @@ const protect = (req, res, next) => {
 const uploadDir = path.join('/tmp', 'uploads'); // Use /tmp for serverless environment
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
+  console.log('path exists');
+}
+else{
+  console.log('path does not exist');
 }
 
 const storage = multer.diskStorage({
